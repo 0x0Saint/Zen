@@ -1,0 +1,13 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    points INT DEFAULT 0
+);
+
+-- جدول daily check-in
+CREATE TABLE checkins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    checkin_date DATE,
+    UNIQUE (user_id, checkin_date)
+);
