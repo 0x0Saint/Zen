@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+</head>
+<body>
+    <h2>‌ </h2>
+    <button id="checkinBtn"> </button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('checkinBtn').onclick = function () {
+            fetch('checkin.php')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').textContent = data.message;
+                    if (data.status === 'success') {
+                        document.getElementById('checkinBtn').disabled = true;
+                    }
+                });
+        };
+    </script>
+</body>
+</html>
